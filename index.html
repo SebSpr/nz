@@ -10,6 +10,12 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="main.css">
 
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="main.js"></script>
 </head>
 
@@ -46,10 +52,13 @@
             <h3>Fox Glacier</h3>
             <figure>
                 <img src="images/attraction.jpg" alt="Blick auf Gletscherzunge des Fox Glaciers">
-                <figcaption><i class="fa-solid fa-camera-retro"></i> Blick auf Gletscherzunge des Fox Glaciers (Quelle: <a
+                <figcaption><i class="fa-solid fa-camera-retro"></i> Blick auf Gletscherzunge des Fox Glaciers (Quelle:
+                    <a
                         href="https://pixabay.com/de/photos/neuseeland-fox-glacier-fox-gletscher-4863015/">Makalu@pixabay</a>)
                 </figcaption>
             </figure>
+            <h3>Übersichtskarte</h3>
+            <div id="map"></div>
 
             <h3>Links</h3>
             <ul>
