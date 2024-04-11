@@ -284,13 +284,15 @@ let jsondata = {
  };
 
 L.geoJSON(jsondata, {}).bindPopup(function (layer) {
-    
     let prop = layer.feature.properties
+    console.log(prop)
     return `
     <h2>${prop.name}</h2>
     <ul> 
         <li>Breite: ${layer.feature.geometry.coordinates[0]}</li>
         <li>Länge: ${layer.feature.geometry.coordinates[1]}</li>
+        <li><a href="https://${prop.user}.github.io/nz">Etappenseite</a></li>
+        <li><a href="${prop.wikipedia}">Wikipedia</a></li>
     </ul>
 `;
 }).addTo(map);
