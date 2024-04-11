@@ -1,6 +1,6 @@
-const lat = -43.53;
-const long = 170.15;
-const zoom = 11;
+let lat = -43.53;
+let long = 170.15;
+let zoom = 11;
 
 let map = L.map('map').setView([lat, long], zoom);
 
@@ -9,4 +9,10 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 let marker = L.marker([lat, long]).addTo(map);
-marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+marker.bindPopup(`
+    <h2>Fox Glacier</h2>
+    <ul> 
+        <li>Breite: ${lat}</li>
+        <li>Länge: ${long}</li>
+    </ul>
+`).openPopup();
