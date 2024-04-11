@@ -14,12 +14,27 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
-let marker = L.marker([lat, lng]).addTo(map);
-L.control.scale({imperial: false, maxWidth: 100}).addTo(map);
-marker.bindPopup(`
-    <h2>Fox Glacier</h2>
+
+
+
+let jsonPunkt = {
+    "type": "Feature",
+    "geometry": {
+        "type": "Point",
+        "coordinates": [lng, lat]
+    },
+    "properties": {
+        "name": "Fox Glacier"
+
+    }
+};
+
+L.geoJSON(jsonPunkt, {}).bindPopup(function (layer) {
+    return `
+    <h2>${layer.feature.properties.name}</h2>
     <ul> 
-        <li>Breite: ${lat.toFixed(5)}</li>
-        <li>Länge: ${long.toFixed(5)}</li>
+        <li>Breite: ${layer.feature.geometry.coordinates[0]}</li>
+        <li>Länge: ${layer.feature.geometry.coordinates[1]}</li>
     </ul>
-`).openPopup();
+`;
+}).addTo(map);
