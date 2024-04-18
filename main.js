@@ -15,7 +15,10 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-
+L.control.scale({
+    imperial: false,
+    maxWidth: 150
+}).addTo(map);
 
 let jsondata = {
     "type": "FeatureCollection",
